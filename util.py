@@ -15,8 +15,8 @@ def logger(func):
         with open("log.txt", "a") as myfile:
             myfile.write(f"Time taken: {end - start}\n")
         return result
-    return wrapper
 
+    return wrapper
 
 
 class NetworkRequest:
@@ -87,8 +87,6 @@ class NetworkRequest:
         result = {}
         try:
             with urlopen(req) as res:
-                body = res.read().decode("utf-8")
-                result["body"] = json.loads(body)
                 result["code"] = res.status
         except HTTPError as e:
             result["body"] = e.read().decode("utf-8")
@@ -170,7 +168,7 @@ class Authentication:
                 if token["code"] == 200:
                     auth.accessToken = token["body"]["access_token"]
                     auth.refreshToken = token["body"]["refresh_token"]
-                    print("Reauthenticated successfully!\n")
+                    print("Reauthenticated successfully!")
                 else:
                     print("Failed to authenticate!")
                     with open("log.txt", "a") as myfile:
@@ -262,9 +260,10 @@ class Twitter:
         tweetID = input("Enter Tweet ID: ")
         updatedTweet = input("Enter new content: ")
         data = {"text": updatedTweet}
-        headers = {}
-        headers["Content-Type"] = "application/json"
-        headers["Authorization"] = f"Bearer {auth.accessToken}"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {auth.accessToken}",
+        }
         res = NetworkRequest.put(
             f"http://localhost:8000/api/tweets/{tweetID}",
             headers=headers,
@@ -289,9 +288,10 @@ class Twitter:
     @Authentication.decorator
     def deleteTweet(self, auth=None):
         tweetID = input("Enter Tweet ID: ")
-        headers = {}
-        headers["Content-Type"] = "application/json"
-        headers["Authorization"] = f"Bearer {auth.accessToken}"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {auth.accessToken}",
+        }
         res = NetworkRequest.delete(
             f"http://localhost:8000/api/tweets/{tweetID}",
             headers=headers,

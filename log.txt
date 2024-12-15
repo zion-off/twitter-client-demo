@@ -424,3 +424,78 @@ When your hammer is C++, everything begins to look like a thumb.
 Time taken: 0.007647991180419922
 No more tweets to show.
 Time taken: 0.005163669586181641
+Login successful. Time taken: 2.9552760124206543
+Posting tweets...
+Number of days since I have encountered an array index error: -1.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.029788970947265625
+In C we had to code our own bugs. In C++ we can inherit them.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.022884130477905273
+['hip', 'hip'] (hip hip array!)
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.024018049240112305
+.NET was named .NET so that it wouldn't show up in a Unix directory listing.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.026600122451782227
+Two bytes meet. The first byte asks, 'Are you ill?' The second byte replies, 'No, just feeling a bit off.'
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.02551889419555664
+A programmer walks into a foo...
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.027067184448242188
+How many programmers does it take to kill a cockroach? Two: one holds, the other installs Windows on it.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.01974797248840332
+What did the Java code say to the C code? A: You've got no class.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.0231020450592041
+What do you call a programmer from Finland? Nerdic.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.031965017318725586
+I had a problem so I thought I'd use Java. Now I have a ProblemFactory.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.030417919158935547
+Login successful. Time taken: 3.352687120437622
+Posting tweets...
+There are 10 types of people: those who understand trinary, those who don't, and those who have never heard of it.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.034683942794799805
+Finding a good PHP developer is like looking for a needle in a haystack. Or is it a hackstack in a needle?
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.023271799087524414
+Could not post tweet! Unauthorized.
+Trying to reauthenticate...Time taken: 0.02593517303466797
+Why did Microsoft name their search engine BING? Because It's Not Google.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.026367902755737305
+There are 10 types of people: those who understand hexadecimal and 15 others.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.03240799903869629
+Login successful. Time taken: 3.2329869270324707
+Posting tweets...
+If you put a million monkeys at a million keyboards, one of them will eventually write a Java program. The rest of them will write Perl.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.02667379379272461
+Number of days since I have encountered an array index error: -1.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.030271053314208984
+Could not post tweet! Unauthorized.
+Trying to reauthenticate...Time taken: 0.028068065643310547
+!false, (It's funny because it's true)
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.0293729305267334
+I had a problem so I thought I'd use Java. Now I have a ProblemFactory.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.028039932250976562
+Could not post tweet! Unauthorized.
+Trying to reauthenticate...Time taken: 0.028285980224609375
+Login successful. Time taken: 3.5311801433563232
+Login successful. Time taken: 4.947196006774902
+Updated Tweet #87 with text 'Test'
+Time taken: 5.924417018890381
+Login successful. Time taken: 3.9596967697143555
+Deleted Tweet #91
+Time taken: 9.290574073791504
+Deleted Tweet #87
+Time taken: 3.2049379348754883

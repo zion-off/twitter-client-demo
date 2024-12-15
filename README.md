@@ -64,3 +64,53 @@ serve a real purpose in the program, so I instead opted to make the decorator
 simply inform the user that it is performing reauthentication before doing it.
 Note that the decorator does not retry if the refresh token also fails to
 reauthenticate.
+
+Deleting a tweet logs an indescript error message on the server:
+
+<details>
+<summary>Stack trace</summary>
+
+```
+RuntimeError: Response content longer than Content-Length
+INFO:     127.0.0.1:50668 - "DELETE /api/tweets/87 HTTP/1.1" 204 No Content
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 372, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/routing.py", line 68, in app
+    await response(scope, receive, send)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/responses.py", line 162, in __call__
+    await send({"type": "http.response.body", "body": self.body})
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/exceptions.py", line 79, in sender
+    await send(message)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in _send
+    await send(message)
+  File "~/projects/Intern-Test-Server/.venv/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 501, in send
+    raise RuntimeError("Response content longer than Content-Length")
+RuntimeError: Response content longer than Content-Length
+```
+</details>
+
+Although the tweet is still deleted successfully, this issue remains to be debugged.
