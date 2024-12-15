@@ -146,6 +146,7 @@ class Authentication:
                         print("Failed to authenticate!")
                         with open("log.txt", "a") as myfile:
                             myfile.write("Failed to authenticate!")
+                        return res
             else:
                 return res
 
@@ -175,6 +176,11 @@ class Twitter:
             "http://localhost:8000/api/tweets?", headers=headers, params=params
         )
         if res["code"] == 200:
+            if len(res["body"]) == 0:
+                print("No more tweets to show.")
+                with open("log.txt", "a") as myfile:
+                    myfile.write("No more tweets to show.\n")
+                return res
             for tweet in res["body"]:
                 print(tweet["author"]["username"], " tweeted at ", tweet["created_at"])
                 print(tweet["text"])

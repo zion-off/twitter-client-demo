@@ -17,7 +17,9 @@ def main():
         with open("log.txt", "a") as myfile:
             myfile.write("Checking recent tweets...\n")
         for i in range(6):
-            twitter.getRecentTweets(1, i, auth=auth)
+            res = twitter.getRecentTweets(1, i, auth=auth)
+            if res is None:
+                break
             sleep(2)
         print("Posting tweets...\n")
         with open("log.txt", "a") as myfile:
