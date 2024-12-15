@@ -14,15 +14,21 @@ def main():
 
     if auth.accessToken:
         print("Checking recent tweets...\n")
+        with open("log.txt", "a") as myfile:
+            myfile.write("Checking recent tweets...\n")
         for i in range(6):
             twitter.getRecentTweets(1, i, auth=auth)
             sleep(2)
         print("Posting tweets...\n")
+        with open("log.txt", "a") as myfile:
+            myfile.write("Checking recent tweets...\n")
         for value in twitter.tweetGenerator(10):
             twitter.postTweets(value, auth=auth)
             sleep(30)
 
     print("Exiting...")
+    with open("log.txt", "a") as myfile:
+        myfile.write("Exiting...")
 
 
 if __name__ == "__main__":

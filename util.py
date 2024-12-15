@@ -93,10 +93,13 @@ class Authentication:
         )
         if res["code"] == 200:
             print("Registration successful.")
+            with open("log.txt", "a") as myfile:
+                myfile.write("Registration successful.")
         else:
             if res["reason"]:
-                print(res["reason"], end="")
-            print(". Try again.")
+                print(res["reason"], ". Try again.")
+                with open("log.txt", "a") as myfile:
+                    myfile.write(res["reason"], ". Try again.")
 
     @logger
     def login(self):
@@ -111,9 +114,13 @@ class Authentication:
             self.accessToken = res["body"].get("access_token")
             self.refreshToken = res["body"].get("refresh_token")
             print("Login successful.")
+            with open("log.txt", "a") as myfile:
+                myfile.write("Login successful. ")
         else:
             if res["reason"]:
-                print(res["reason"], end="")
+                print(res["reason"], ". Try again.")
+                with open("log.txt", "a") as myfile:
+                    myfile.write(res["reason"], ". Try again.")
 
     @staticmethod
     def decorator(func):
@@ -121,6 +128,8 @@ class Authentication:
             res = func(self, *args, **kwargs)
             if res["code"] == 401:
                 print("Trying to reauthenticate...")
+                with open("log.txt", "a") as myfile:
+                    myfile.write("Trying to reauthenticate...")
                 auth = kwargs.get("auth")
                 if auth:
                     data = {"refresh_token": auth.refreshToken}
@@ -135,6 +144,8 @@ class Authentication:
                         return func(self, *args, **kwargs)
                     else:
                         print("Failed to authenticate!")
+                        with open("log.txt", "a") as myfile:
+                            myfile.write("Failed to authenticate!")
             else:
                 return res
 
@@ -167,11 +178,20 @@ class Twitter:
             for tweet in res["body"]:
                 print(tweet["author"]["username"], " tweeted at ", tweet["created_at"])
                 print(tweet["text"])
+                with open("log.txt", "a") as myfile:
+                    myfile.write(
+                        f'{tweet["author"]["username"]} tweeted at {tweet["created_at"]}\n'
+                    )
+                    myfile.write(f'{tweet["text"]}\n')
 
         else:
             if res["reason"]:
                 print("Could not get tweets!", end=" ")
-                print(res["reason"], end=".")
+                print(res["reason"], end=".\n")
+                with open("log.txt", "a") as myfile:
+                    myfile.write("Could not get tweets! ")
+                    myfile.write(f'{res["reason"]}.\n')
+
         return res
 
     @logger
@@ -189,9 +209,16 @@ class Twitter:
         if res["code"] == 201:
             print(value)
             print("Posted 1 tweet. Sleeping for 1 minute now.")
-            
+            with open("log.txt", "a") as myfile:
+                myfile.write(f"{value}\n")
+                myfile.write("Posted 1 tweet. Sleeping for 1 minute now.\n")
+
         else:
             if res["reason"]:
                 print("Could not post tweet!", end=" ")
                 print(res["reason"], end=".\n")
+                with open("log.txt", "a") as myfile:
+                    myfile.write("Could not post tweet! ")
+                    myfile.write(f'{res["reason"]}.\n')
+
         return res
