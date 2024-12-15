@@ -9,13 +9,14 @@ from urllib.error import HTTPError
 def logger(func):
     def wrapper(*args, **kwargs):
         start = time.time()
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
         end = time.time()
         print(f"Time taken: {end - start}\n")
         with open("log.txt", "a") as myfile:
             myfile.write(f"Time taken: {end - start}\n")
-
+        return result
     return wrapper
+
 
 
 class NetworkRequest:
@@ -23,7 +24,7 @@ class NetworkRequest:
     def get(url, headers={}, params=None):
         if params:
             query_string = urlencode(params)
-        url = url + query_string
+            url = url + "?" + query_string
         req = Request(url=url, method="GET")
         for key, value in headers.items():
             req.add_header(key, value)
@@ -45,7 +46,6 @@ class NetworkRequest:
         req = Request(url=url, method="POST", data=json.dumps(data).encode("utf-8"))
         for key, value in headers.items():
             req.add_header(key, value)
-
         result = {}
         try:
             with urlopen(req) as res:
@@ -116,8 +116,7 @@ class Authentication:
             "lastname": lastName,
             "password": password,
         }
-        headers = {}
-        headers["Content-Type"] = "application/json"
+        headers = {"Content-Type": "application/json"}
         res = NetworkRequest.post(
             "http://localhost:8000/api/users", headers=headers, data=data
         )
@@ -136,8 +135,7 @@ class Authentication:
         username = input("Enter your username: ")
         password = input("Enter your password: ")
         data = {"username": username, "password": password}
-        headers = {}
-        headers["Content-Type"] = "application/json"
+        headers = {"Content-Type": "application/json"}
         res = NetworkRequest.post("http://localhost:8000/api/auth", headers, data=data)
         if res["code"] == 200:
             self.currentUser = username
@@ -154,31 +152,30 @@ class Authentication:
 
     @staticmethod
     def decorator(func):
-        def wrapper(self, *args, **kwargs):
-            res = func(self, *args, **kwargs)
-            if res["code"] == 401:
-                print("Trying to reauthenticate...")
-                with open("log.txt", "a") as myfile:
-                    myfile.write("Trying to reauthenticate...")
-                auth = kwargs.get("auth")
-                if auth:
-                    data = {"refresh_token": auth.refreshToken}
-                    headers = {"Content-Type": "application/json"}
-                    token = NetworkRequest.post(
-                        "http://localhost:8000/api/auth/token", headers, data=data
-                    )
-                    if token["code"] == 200:
-                        auth.accessToken = token["body"]["access_token"]
-                        auth.refreshToken = token["body"]["refresh_token"]
-                        print("Reauthenticated successfully!\n")
-                        return func(self, *args, **kwargs)
-                    else:
-                        print("Failed to authenticate!")
-                        with open("log.txt", "a") as myfile:
-                            myfile.write("Failed to authenticate!")
-                        return res
-            else:
+        def wrapper(*args, **kwargs):
+            res = func(*args, **kwargs)
+            # if this is not a 401 error, return early
+            if res["code"] != 401:
                 return res
+            print("Trying to reauthenticate...")
+            with open("log.txt", "a") as myfile:
+                myfile.write("Trying to reauthenticate...")
+            auth = kwargs.get("auth")
+            if auth:
+                data = {"refresh_token": auth.refreshToken}
+                headers = {"Content-Type": "application/json"}
+                token = NetworkRequest.post(
+                    "http://localhost:8000/api/auth/token", headers, data=data
+                )
+                if token["code"] == 200:
+                    auth.accessToken = token["body"]["access_token"]
+                    auth.refreshToken = token["body"]["refresh_token"]
+                    print("Reauthenticated successfully!\n")
+                else:
+                    print("Failed to authenticate!")
+                    with open("log.txt", "a") as myfile:
+                        myfile.write("Failed to authenticate!")
+            return res
 
         return wrapper
 
@@ -203,7 +200,7 @@ class Twitter:
         params = {"limit": limit, "skip": skip}
         headers = {"Authorization": f"Bearer {auth.accessToken}"}
         res = NetworkRequest.get(
-            "http://localhost:8000/api/tweets?", headers=headers, params=params
+            "http://localhost:8000/api/tweets", headers=headers, params=params
         )
         if res["code"] == 200:
             if len(res["body"]) == 0:
@@ -219,6 +216,7 @@ class Twitter:
                         f'{tweet["author"]["username"]} tweeted at {tweet["created_at"]}\n'
                     )
                     myfile.write(f'{tweet["text"]}\n')
+            return res
 
         else:
             if res["reason"]:
@@ -227,8 +225,7 @@ class Twitter:
                 with open("log.txt", "a") as myfile:
                     myfile.write("Could not get tweets! ")
                     myfile.write(f'{res["reason"]}.\n')
-
-        return res
+            return res
 
     @logger
     @Authentication.decorator

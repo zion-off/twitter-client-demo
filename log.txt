@@ -173,3 +173,254 @@ Login successful. Time taken: 9.643759965896606
 Could not delete tweet! Not Found.
 Time taken: 3.67930006980896
 Login successful. Time taken: 3.193783760070801
+Login successful. Time taken: 3.8776400089263916
+Login successful. Time taken: 3.484515905380249
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.03600311279296875
+No more tweets to show.
+Time taken: 0.008650064468383789
+No more tweets to show.
+Time taken: 0.0067138671875
+No more tweets to show.
+Time taken: 0.0050029754638671875
+No more tweets to show.
+Time taken: 0.004868268966674805
+No more tweets to show.
+Time taken: 0.0044438838958740234
+Login successful. Time taken: 2.665097951889038
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.017661094665527344
+Posting tweets...
+Java: Write once, run away.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.03957390785217285
+Why did the QA cross the road? To ruin everyone's day.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.02923297882080078
+Login successful. Time taken: 4.05511999130249
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.01592707633972168
+Login successful. Time taken: 2.445712089538574
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.01736617088317871
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.008854866027832031
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.007792949676513672
+No more tweets to show.
+Time taken: 0.00461578369140625
+No more tweets to show.
+Time taken: 0.005039215087890625
+No more tweets to show.
+Time taken: 0.004933834075927734
+Login successful. Time taken: 4.578808069229126
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.01603078842163086
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.008837223052978516
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.006278038024902344
+No more tweets to show.
+Time taken: 0.003904104232788086
+No more tweets to show.
+Time taken: 0.0156402587890625
+No more tweets to show.
+Time taken: 0.005043983459472656
+Login successful. Time taken: 3.1243908405303955
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.013087987899780273
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.011984109878540039
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.008122920989990234
+No more tweets to show.
+Time taken: 0.006112098693847656
+No more tweets to show.
+Time taken: 0.005279064178466797
+No more tweets to show.
+Time taken: 0.005202054977416992
+Login successful. Time taken: 4.681636095046997
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.020395994186401367
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.009415864944458008
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.006921052932739258
+No more tweets to show.
+Time taken: 0.0046269893646240234
+No more tweets to show.
+Time taken: 0.004477977752685547
+No more tweets to show.
+Time taken: 0.004643678665161133
+Login successful. Time taken: 6.371345281600952
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.014050722122192383
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.0065038204193115234
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.00704503059387207
+No more tweets to show.
+Time taken: 0.0046269893646240234
+No more tweets to show.
+Time taken: 0.005697965621948242
+No more tweets to show.
+Time taken: 0.006165981292724609
+Login successful. Time taken: 3.27827787399292
+Login successful. Time taken: 4.7877113819122314
+Checking recent tweets...
+Login successful. Time taken: 3.4941580295562744
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.018406152725219727
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.00956106185913086
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.00757908821105957
+No more tweets to show.
+Time taken: 0.004277706146240234
+No more tweets to show.
+Time taken: 0.004369258880615234
+No more tweets to show.
+Time taken: 0.003922939300537109
+Login successful. Time taken: 3.7988569736480713
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.01241302490234375
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.00768589973449707
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.0052280426025390625
+No more tweets to show.
+Time taken: 0.004480838775634766
+No more tweets to show.
+Time taken: 0.00415492057800293
+No more tweets to show.
+Time taken: 0.0038797855377197266
+Login successful. Time taken: 5.564316034317017
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.01775383949279785
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.010074138641357422
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.007361173629760742
+No more tweets to show.
+Time taken: 0.0046079158782958984
+No more tweets to show.
+Time taken: 0.0037641525268554688
+No more tweets to show.
+Time taken: 0.003593921661376953
+Login successful. Time taken: 2.4088242053985596
+Login successful. Time taken: 2.8542330265045166
+Login successful. Time taken: 2.7018368244171143
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.011947870254516602
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.008630990982055664
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.006361961364746094
+No more tweets to show.
+Time taken: 0.005280971527099609
+No more tweets to show.
+Time taken: 0.005473136901855469
+No more tweets to show.
+Time taken: 0.005688190460205078
+Login successful. Time taken: 2.770277976989746
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.01559591293334961
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.0077168941497802734
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.006396055221557617
+No more tweets to show.
+Time taken: 0.003941059112548828
+No more tweets to show.
+Time taken: 0.0039520263671875
+No more tweets to show.
+Time taken: 0.004205942153930664
+Login successful. Time taken: 3.095432758331299
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.01843094825744629
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.010472774505615234
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.008048057556152344
+No more tweets to show.
+Time taken: 0.005458831787109375
+No more tweets to show.
+Time taken: 0.00464630126953125
+No more tweets to show.
+Time taken: 0.0050199031829833984
+Login successful. Time taken: 3.238579034805298
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.015455007553100586
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.007946014404296875
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.005919933319091797
+No more tweets to show.
+Time taken: 0.004045724868774414
+Login successful. Time taken: 4.112962961196899
+Checking recent tweets...
+zion tweeted at 2024-12-15T14:56:12.211278
+Why did the QA cross the road? To ruin everyone's day.
+Time taken: 0.01001119613647461
+zion tweeted at 2024-12-15T14:55:42.168938
+Java: Write once, run away.
+Time taken: 0.00767207145690918
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.007647991180419922
+No more tweets to show.
+Time taken: 0.005163669586181641

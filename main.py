@@ -16,14 +16,15 @@ def main():
             continue
 
     if auth.accessToken:
-        print(auth.accessToken)
         menuItem = "-1"
         while menuItem != "5":
-            print("To check recent tweets, enter 1.")
-            print("To post 10 tweets, enter 2.")
-            print("To update a tweet (with an ID), enter 3.")
-            print("To delete a tweet (with an ID), enter 4.")
-            print("To exit, enter anything else.")
+            print(
+                "To check recent tweets, enter 1.\n"
+                "To post 10 tweets, enter 2.\n"
+                "To update a tweet (with an ID), enter 3.\n"
+                "To delete a tweet (with an ID), enter 4.\n"
+                "To exit, enter anything else."
+            )
             menuItem = input("> ")
             print()
             if menuItem == "1":
@@ -32,8 +33,8 @@ def main():
                     myfile.write("Checking recent tweets...\n")
                 for i in range(6):
                     res = twitter.getRecentTweets(1, i, auth=auth)
-                    if res is None:
-                        continue
+                    if len(res["body"]) == 0:
+                        break
             elif menuItem == "2":
                 print("Posting tweets...\n")
                 with open("log.txt", "a") as myfile:

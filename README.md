@@ -1,3 +1,15 @@
+## Run with watchdog
+
+```
+pip install watchdog
+```
+
+Then run
+
+```
+watchmedo auto-restart --patterns="*.py" --recursive -- python main.py
+```
+
 ## Classes and functions
 
 ### `main` function
@@ -30,7 +42,7 @@ appropriate message.
 
 ### `logger` decorator
 
-This will log the execution time.
+This will log the execution time of the function it wraps.
 
 ## Challenges
 
