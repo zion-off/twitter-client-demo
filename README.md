@@ -1,0 +1,47 @@
+## Classes and functions
+
+### `main` function
+
+The main function instatiates an `Authentication` object, which provides login
+and register functionality and acts as the token store. When the user is
+successfully logged in, it calls the `getRecentTweets` function, followed the
+`postTweets` function. Finally, it writes these logs to a file
+before exiting.
+
+### `getRecentTweets` function
+
+It makes a NetworkRequest to the server to get the 5 most recent tweets.
+
+### `postTweets` function
+
+The `postTweets` function posts 10 tweets every minute using the `pyjokes`
+package. It also keeps a set to store used jokes, so the same joke is not
+repeated.
+
+### `Authenticate` class
+
+Variables: `access_token`, `refresh_token`
+
+The `Authenticate` should have two methods: `register` and `login`.
+
+### `reauthenticate` decorator
+
+The `reaunthenticate` decorator wraps each NetworkRequest method. If
+access_token is expired (response is 401), it will use the refresh token to get
+a new access token, and then rerun the function. If retry returns 401, exit with
+an appropriate message.
+
+### `logger` decorator
+
+This will log the execution time.
+
+## Notes
+
+From the `urllib.request` documentation,
+
+"An appropriate Content-Type header should be included if the data argument is
+present. If this header has not been provided and data is not None,
+Content-Type: application/x-www-form-urlencoded will be added as a default."
+[1](https://docs.python.org/3/library/urllib.request.html#urllib.request.Request)
+
+Without this header, I was getting the `422 Unprocessable Entity` error, which I spent a lot of time debugging.
