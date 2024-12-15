@@ -1,9 +1,21 @@
 import json
-from time import sleep
+import time
 from pyjokes import get_joke
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
+
+
+def logger(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        func(*args, **kwargs)
+        end = time.time()
+        print(f"Time taken: {end - start}\n")
+        with open("log.txt", "a") as myfile:
+            myfile.write(f"Time taken: {end - start}\n")
+
+    return wrapper
 
 
 class NetworkRequest:
@@ -62,6 +74,7 @@ class Authentication:
         self.accessToken = None
         self.refreshToken = None
 
+    @logger
     def register(self):
         firstName = input("Enter your first name: ")
         lastName = input("Enter your last name: ")
@@ -85,6 +98,7 @@ class Authentication:
                 print(res["reason"], end="")
             print(". Try again.")
 
+    @logger
     def login(self):
         username = input("Enter your username: ")
         password = input("Enter your password: ")
@@ -100,14 +114,38 @@ class Authentication:
         else:
             if res["reason"]:
                 print(res["reason"], end="")
-            print(". Try again.")
+
+    @staticmethod
+    def decorator(func):
+        def wrapper(self, *args, **kwargs):
+            res = func(self, *args, **kwargs)
+            if res["code"] == 401:
+                print("Trying to reauthenticate...")
+                auth = kwargs.get("auth")
+                if auth:
+                    data = {"refresh_token": auth.refreshToken}
+                    headers = {"Content-Type": "application/json"}
+                    token = NetworkRequest.post(
+                        "http://localhost:8000/api/auth/token", headers, data=data
+                    )
+                    if token["code"] == 200:
+                        auth.accessToken = token["body"]["access_token"]
+                        auth.refreshToken = token["body"]["refresh_token"]
+                        print("Reauthenticated successfully!\n")
+                        return func(self, *args, **kwargs)
+                    else:
+                        print("Failed to authenticate!")
+            else:
+                return res
+
+        return wrapper
 
 
 class Twitter:
     def __init__(self):
         self.usedTweets = set()
 
-    def generator(self, n):
+    def tweetGenerator(self, n):
         value = 0
         while value < n:
             joke = get_joke()
@@ -117,9 +155,10 @@ class Twitter:
             self.usedTweets.add(joke)
             value += 1
 
-    def getRecentTweets(self, auth):
-        print("Checking recent tweets...")
-        params = {"limit": 5, "skip": 0}
+    @logger
+    @Authentication.decorator
+    def getRecentTweets(self, limit=1, skip=0, auth=None):
+        params = {"limit": limit, "skip": skip}
         headers = {"Authorization": f"Bearer {auth.accessToken}"}
         res = NetworkRequest.get(
             "http://localhost:8000/api/tweets?", headers=headers, params=params
@@ -128,31 +167,31 @@ class Twitter:
             for tweet in res["body"]:
                 print(tweet["author"]["username"], " tweeted at ", tweet["created_at"])
                 print(tweet["text"])
-                print()
 
         else:
             if res["reason"]:
                 print("Could not get tweets!", end=" ")
                 print(res["reason"], end=".")
+        return res
 
-    def postTweets(self, auth):
-        print("Posting tweets...")
-
-        for value in self.generator(10):
-            tweet = {
-                "text": value,
-            }
-            headers = {}
-            headers["Content-Type"] = "application/json"
-            headers["Authorization"] = f"Bearer {auth.accessToken}"
-            res = NetworkRequest.post(
-                "http://localhost:8000/api/tweets", headers=headers, data=tweet
-            )
-            if res["code"] == 201:
-                print(value)
-                print("Posted 1 tweet. Sleeping for 1 minute now.")
-                sleep(3)
-            else:
-                if res["reason"]:
-                    print("Could not post this tweet!", end=" ")
-                    print(res["reason"], end=".")
+    @logger
+    @Authentication.decorator
+    def postTweets(self, value, auth=None):
+        tweet = {
+            "text": value,
+        }
+        headers = {}
+        headers["Content-Type"] = "application/json"
+        headers["Authorization"] = f"Bearer {auth.accessToken}"
+        res = NetworkRequest.post(
+            "http://localhost:8000/api/tweets", headers=headers, data=tweet
+        )
+        if res["code"] == 201:
+            print(value)
+            print("Posted 1 tweet. Sleeping for 1 minute now.")
+            
+        else:
+            if res["reason"]:
+                print("Could not post tweet!", end=" ")
+                print(res["reason"], end=".\n")
+        return res

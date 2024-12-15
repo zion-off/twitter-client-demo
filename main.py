@@ -1,4 +1,6 @@
 from util import Authentication, Twitter
+from time import sleep
+
 
 def main():
     auth = Authentication()
@@ -11,9 +13,17 @@ def main():
             auth.login()
 
     if auth.accessToken:
-        twitter.getRecentTweets(auth)
-        twitter.postTweets(auth)
-    
+        print("Checking recent tweets...\n")
+        for i in range(6):
+            twitter.getRecentTweets(1, i, auth=auth)
+            sleep(2)
+        print("Posting tweets...\n")
+        for value in twitter.tweetGenerator(10):
+            twitter.postTweets(value, auth=auth)
+            sleep(30)
 
-if __name__ == '__main__':
+    print("Exiting...")
+
+
+if __name__ == "__main__":
     main()
