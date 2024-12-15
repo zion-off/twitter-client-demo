@@ -1,0 +1,175 @@
+Login successful. Time taken: 2.8522770404815674
+Checking recent tweets...
+zion tweeted at 2024-12-15T11:32:01.224122
+A programmer walks into a foo...
+Time taken: 0.005532026290893555
+Checking recent tweets...
+To understand recursion you must first understand recursion.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.008693933486938477
+Login successful. Time taken: 2.786372184753418
+Login successful. Time taken: 2.149106979370117
+Login successful. Time taken: 3.1324238777160645
+Checking recent tweets...
+zion tweeted at 2024-12-15T11:43:08.306735
+To understand recursion you must first understand recursion.
+Time taken: 0.010404109954833984
+Login successful. Time taken: 3.1923789978027344
+Login successful. Time taken: 2.8898239135742188
+Checking recent tweets...
+zion tweeted at 2024-12-15T11:43:08.306735
+To understand recursion you must first understand recursion.
+Time taken: 0.017843008041381836
+Login successful. Time taken: 3.3421597480773926
+Checking recent tweets...
+zion tweeted at 2024-12-15T11:43:08.306735
+To understand recursion you must first understand recursion.
+Time taken: 0.013703107833862305
+Login successful. Time taken: 2.2636280059814453
+Checking recent tweets...
+zion tweeted at 2024-12-15T11:43:08.306735
+To understand recursion you must first understand recursion.
+Time taken: 0.012427091598510742
+zion tweeted at 2024-12-15T11:32:01.224122
+A programmer walks into a foo...
+Time taken: 0.009300947189331055
+zion tweeted at 2024-12-15T11:31:31.200441
+string
+Time taken: 0.0078029632568359375
+No more tweets to show.
+Time taken: 0.004882097244262695
+No more tweets to show.
+Time taken: 0.004095792770385742
+No more tweets to show.
+Time taken: 0.003889799118041992
+Posting tweets...
+When your hammer is C++, everything begins to look like a thumb.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.02541184425354004
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Posted 1 tweet. Sleeping for 1 minute now.
+Time taken: 0.03360700607299805
+Login successful. Time taken: 4.566215991973877
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.017227888107299805
+Login successful. Time taken: 2.170933961868286
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.015715837478637695
+Login successful. Time taken: 2.245234251022339
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.017456769943237305
+Login successful. Time taken: 2.3552420139312744
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.015635251998901367
+Login successful. Time taken: 4.184884071350098
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.015172243118286133
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.008465051651000977
+zion tweeted at 2024-12-15T11:43:08.306735
+To understand recursion you must first understand recursion.
+Time taken: 0.0058727264404296875
+zion tweeted at 2024-12-15T11:32:01.224122
+A programmer walks into a foo...
+Time taken: 0.005599021911621094
+zion tweeted at 2024-12-15T11:31:31.200441
+string
+Time taken: 0.005656003952026367
+Time taken: 0.0036690235137939453
+Login successful. Time taken: 2.632513999938965
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.015109777450561523
+Login successful. Time taken: 2.6923539638519287
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.014059066772460938
+Login successful. Time taken: 2.9542958736419678
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+zion tweeted at 2024-12-15T11:43:08.306735
+To understand recursion you must first understand recursion.
+zion tweeted at 2024-12-15T11:32:01.224122
+A programmer walks into a foo...
+zion tweeted at 2024-12-15T11:31:31.200441
+string
+Login successful. Time taken: 3.370455026626587
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.01601576805114746
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.009576797485351562
+zion tweeted at 2024-12-15T11:43:08.306735
+To understand recursion you must first understand recursion.
+Time taken: 0.006638050079345703
+zion tweeted at 2024-12-15T11:32:01.224122
+A programmer walks into a foo...
+Time taken: 0.00651860237121582
+zion tweeted at 2024-12-15T11:31:31.200441
+string
+Time taken: 0.005203962326049805
+Login successful. Time taken: 2.5357420444488525
+Checking recent tweets...
+zion tweeted at 2024-12-15T12:11:17.598514
+How many programmers does it take to change a lightbulb? None, they just make darkness a standard.
+Time taken: 0.011268138885498047
+zion tweeted at 2024-12-15T12:10:47.565917
+When your hammer is C++, everything begins to look like a thumb.
+Time taken: 0.008461952209472656
+zion tweeted at 2024-12-15T11:43:08.306735
+To understand recursion you must first understand recursion.
+Time taken: 0.0060002803802490234
+zion tweeted at 2024-12-15T11:32:01.224122
+A programmer walks into a foo...
+Time taken: 0.0050280094146728516
+zion tweeted at 2024-12-15T11:31:31.200441
+string
+Time taken: 0.0049021244049072266
+No more tweets to show.
+Time taken: 0.005140066146850586
+Login successful. Time taken: 3.021970748901367
+Login successful. Time taken: 3.345456838607788
+Login successful. Time taken: 2.4157729148864746
+Could not post tweet! Method Not Allowed.
+Time taken: 3.2008628845214844
+Login successful. Time taken: 2.7105977535247803
+Could not post tweet! Unprocessable Entity.
+Time taken: 3.8456571102142334
+Login successful. Time taken: 2.2454028129577637
+Could not post tweet! Unprocessable Entity.
+Time taken: 3.2281651496887207
+Login successful. Time taken: 2.154542922973633
+Updated Tweet #83 with text 'asdfasd'Time taken: 3.3914313316345215
+Login successful. Time taken: 4.584540128707886
+Could not delete tweet! Unprocessable Entity.
+Time taken: 3.4619100093841553
+Login successful. Time taken: 3.024015188217163
+Login successful. Time taken: 2.962028980255127
+Could not delete tweet! Not Found.
+Time taken: 1.537283182144165
+Login successful. Time taken: 3.255957841873169
+Login successful. Time taken: 2.7560019493103027
+Could not delete tweet! Not Found.
+Time taken: 2.6618869304656982
+Login successful. Time taken: 9.643759965896606
+Could not delete tweet! Not Found.
+Time taken: 3.67930006980896
+Login successful. Time taken: 3.193783760070801

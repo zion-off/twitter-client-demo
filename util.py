@@ -60,12 +60,42 @@ class NetworkRequest:
         return result
 
     @staticmethod
-    def put():
-        pass
+    def put(url, headers={}, data={}):
+        req = Request(url=url, method="PUT", data=json.dumps(data).encode("utf-8"))
+        for key, value in headers.items():
+            req.add_header(key, value)
+
+        result = {}
+        try:
+            with urlopen(req) as res:
+                body = res.read().decode("utf-8")
+                result["body"] = json.loads(body)
+                result["code"] = res.status
+        except HTTPError as e:
+            result["body"] = e.read().decode("utf-8")
+            result["code"] = e.code
+            result["reason"] = e.reason
+
+        return result
 
     @staticmethod
-    def delete():
-        pass
+    def delete(url, headers={}):
+        req = Request(url=url, method="DELETE")
+        for key, value in headers.items():
+            req.add_header(key, value)
+
+        result = {}
+        try:
+            with urlopen(req) as res:
+                body = res.read().decode("utf-8")
+                result["body"] = json.loads(body)
+                result["code"] = res.status
+        except HTTPError as e:
+            result["body"] = e.read().decode("utf-8")
+            result["code"] = e.code
+            result["reason"] = e.reason
+
+        return result
 
 
 class Authentication:
@@ -225,6 +255,61 @@ class Twitter:
                 print(res["reason"], end=".\n")
                 with open("log.txt", "a") as myfile:
                     myfile.write("Could not post tweet! ")
+                    myfile.write(f'{res["reason"]}.\n')
+
+        return res
+
+    @logger
+    @Authentication.decorator
+    def updateTweet(self, auth=None):
+        tweetID = input("Enter Tweet ID: ")
+        updatedTweet = input("Enter new content: ")
+        data = {"text": updatedTweet}
+        headers = {}
+        headers["Content-Type"] = "application/json"
+        headers["Authorization"] = f"Bearer {auth.accessToken}"
+        res = NetworkRequest.put(
+            f"http://localhost:8000/api/tweets/{tweetID}",
+            headers=headers,
+            data=data,
+        )
+        if res["code"] == 200:
+            print(f"Updated Tweet #{tweetID} with text '{updatedTweet}'")
+            with open("log.txt", "a") as myfile:
+                myfile.write(f"Updated Tweet #{tweetID} with text '{updatedTweet}'\n")
+
+        else:
+            if res["reason"]:
+                print("Could not update tweet!", end=" ")
+                print(res["reason"], end=".\n")
+                with open("log.txt", "a") as myfile:
+                    myfile.write("Could not update tweet! ")
+                    myfile.write(f'{res["reason"]}.\n')
+
+        return res
+
+    @logger
+    @Authentication.decorator
+    def deleteTweet(self, auth=None):
+        tweetID = input("Enter Tweet ID: ")
+        headers = {}
+        headers["Content-Type"] = "application/json"
+        headers["Authorization"] = f"Bearer {auth.accessToken}"
+        res = NetworkRequest.delete(
+            f"http://localhost:8000/api/tweets/{tweetID}",
+            headers=headers,
+        )
+        if res["code"] == 204:
+            print(f"Deleted Tweet #{tweetID}.")
+            with open("log.txt", "a") as myfile:
+                myfile.write(f"Deleted Tweet #{tweetID}\n")
+
+        else:
+            if res["reason"]:
+                print("Could not delete tweet!", end=" ")
+                print(res["reason"], end=".\n")
+                with open("log.txt", "a") as myfile:
+                    myfile.write("Could not delete tweet! ")
                     myfile.write(f'{res["reason"]}.\n')
 
         return res
