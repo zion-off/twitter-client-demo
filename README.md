@@ -8,25 +8,19 @@ successfully logged in, it calls the `getRecentTweets` function, followed the
 `postTweets` function. Finally, it writes these logs to a file
 before exiting.
 
-### `getRecentTweets` function
+### `Twitter` class
 
-It makes a NetworkRequest to the server to get the 5 most recent tweets.
-
-### `postTweets` function
-
-The `postTweets` function posts 10 tweets every minute using the `pyjokes`
-package. It also keeps a set to store used jokes, so the same joke is not
-repeated.
+Methods: `getRecentTweets`, which makes a NetworkRequest to the server to get the 5 most recent tweets, and `postTweets`, which calls the `generator` method to genrate and post 10 tweets every minute using the `pyjokes` package. It also keeps a set to store used jokes, so the same joke is not repeated.
 
 ### `Authenticate` class
 
-Variables: `access_token`, `refresh_token`
+Variables: `access_token`, `refresh_token`, `currentUser`
 
-The `Authenticate` should have two methods: `register` and `login`.
+The `Authenticate` has two methods, `register` and `login`, that perform their namesake tasks.
 
 ### `reauthenticate` decorator
 
-The `reaunthenticate` decorator wraps each NetworkRequest method. If
+The `reaunthenticate` decorator wraps each `Twitter` method. If
 access_token is expired (response is 401), it will use the refresh token to get
 a new access token, and then rerun the function. If retry returns 401, exit with
 an appropriate message.
